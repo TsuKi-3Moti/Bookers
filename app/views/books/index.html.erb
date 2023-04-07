@@ -1,15 +1,11 @@
 <h1>Books</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Body</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+<% @books.each do |book| %>
+  <h4>Title</h4>
+    <p><%= book.title %></p>
+  <h4>Body</h4>
+    <p><%= book.body %></p>
+  <div>
+    <span><%= link_to 'Show', book_path(book.id) %></span>
+    <span><%= link_to 'Edit', edit_book_path(book.id) %></span>
+  </div>
+<% end %>
